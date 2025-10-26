@@ -1,0 +1,14 @@
+Explain the usage of the pass statement and give an appropriate example.
+
+- pass adalah pernyataan kosong (null statement) di Python.
+- Dipakai ketika kita butuh blok kode (misalnya di class, fungsi, loop, atau if) tetapi belum ingin mengisinya.
+- Dengan pass, Python tidak akan error walaupun bloknya kosong.
+- Sering dipakai saat merancang struktur program (class, fungsi, loop) sebelum menambahkan detail implementasi.
+
+Example:
+
+class Animal:
+    pass
+
+a = Animal()
+print("Objek animal berhasil dibuat.")

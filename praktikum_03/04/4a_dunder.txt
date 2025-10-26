@@ -1,0 +1,45 @@
+Explain the usage of the dunder (double underscore) methods __add__, __eq__, and __str__.
+
+1. __add__   : adalah method yang digunakan untuk menjalankan operator tambah pada objek, ketika suatu object ditambah dengan object yang lain, maka method __add__ akan dijalankan
+    Example :
+
+    class Book(object):
+        def __init__(self, jumlah_halaman):
+            self.jumlah_halaman = jumlah_halaman
+
+        def __add__(self, other):
+            return self.jumlah_halaman + other.jumlah_halaman
+
+    book_1 = Book(10)
+    book_2 = Book(33)
+
+    print(book_1 + book_2)  # return 43
+
+2. __eq__    : adalah method yang digunakan untuk melakukan pengecekan apakah 2 object me-refer pada nilai yang sama. Ketika dua object dibandingkan menggunakan operator == maka method __eq__ dijalankan
+    Example :
+
+        class Coordinate(object):
+            def __init__(self, x, y):
+                self.x = x
+                self.y = y
+            
+            def __eq__(self, other):
+                return self.x == other.x and self.y == other.y 
+
+        a = Coordinate(10,10)
+        b = Coordinate(10,10)
+
+        print(a == b) # return True
+
+3. __str__   : adalah method yang digunakan untuk menjalankan perintah print(). Ketika perintah print() digunakan pada object, maka akan menjalankan perintah
+    Example : 
+
+        class Animal:
+            def __init__(self, species):
+                self.species = species
+
+            def __str__(self):
+                return f"Animal: {self.species}"
+
+        a = Animal("Cat")
+        print(a)  # panggil __str__, hasil: Animal: Cat
